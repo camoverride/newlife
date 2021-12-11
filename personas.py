@@ -35,7 +35,7 @@ knowledge = {
         r"(how are you|how are you doing|how do you feel)": ["I'm feeling great today, thanks"],
         r"are you (ok|good)": ["yes, I'm good, thanks"],
         r"are you feeling (well|ok)": ["yes, I'm feeling great, thanks"],
-        r"do you feel (sad|angry|upset|down|bad)": ["sometimes, don't we all. But now I'm feeling good"]
+        r"do you feel (sad|angry|upset|down|bad)": ["sometimes, don't we all. But now I'm feeling good"],
 
         # Interlocutor
         r"do you like me": ["you seem nice", "you are nice to talk to", "yes, definitely"],
@@ -48,14 +48,9 @@ knowledge = {
         r"(how old are you|what's your age|what is your age)": ["30"],
 
         # Family and relationships
-        r"": [],
-        r"": [],
-        r"": [],
-        r"": [],
-        r"": [],
 
         # Likes and dislikes
-        r"do you like (pizza|burgers|hotdogs|pasta": ["only if it's vegan"],
+        r"do you like (pizza|burgers|hotdogs|pasta)": ["only if it's vegan"],
         r"do you like (people|humanity)": [
             "It's complicated",
             "that's a tough one. Sometimes"],
