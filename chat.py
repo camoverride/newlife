@@ -90,7 +90,7 @@ class Persona:
                     # Change mode
                     if transcription == "mode translate":
                         self.mode = "translate"
-                    elif transcription == "mode echo":
+                    elif transcription == "mode Echo":
                         self.mode = "echo"
                     elif transcription == "mode chat":
                         self.mode = "chat"
