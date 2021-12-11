@@ -77,6 +77,7 @@ class Persona:
                 # ASR
                 print("2) ASR .............")
                 start = datetime.now()
+                transcription = None
                 if audio:
                     transcription = self._speech_to_text.speech_to_text(audio)
 
