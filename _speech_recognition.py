@@ -4,6 +4,7 @@ import wave
 import speech_recognition as sr
 
 
+
 class SpeechRecognizer:
     def __init__(self):
         self.recognizer = sr.Recognizer()
@@ -14,7 +15,7 @@ class SpeechRecognizer:
     def get_audio(self, source):
         """
         This method listens to incoming audio and determines which "chunk" should
-        be considered a valid speech signal for downstream processing
+        be considered a valid speech signal for downstream processing.
 
         Parameters
         ----------
@@ -38,7 +39,6 @@ class SpeechRecognizer:
         """
         ASR - Automagic Speech Recognition
         Tracks some incoming audio and converts it to a string.
-        TODO: find a lightweight library that will run on Pi
 
         Parameters
         ----------

@@ -136,8 +136,9 @@ class Persona:
 if __name__ == "__main__":
 
     # Create an individual AI agent
-    # starting modes = chat, echo, translate
-    persona_Cam2 = Persona(name="Cam2.0", mode="translate", language="es")
+    starting_mode = "translate" # starting modes = "chat", "echo", "translate"
+    starting_language = "es" # for other options see `gtts_lang_codes.py`
+    persona_Cam2 = Persona(name="Cam2.0", mode=starting_mode, language=starting_language)
 
     # Start the chat session
     persona_Cam2.converse()

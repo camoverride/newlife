@@ -75,6 +75,18 @@ codes = {
 tts_lang_codes = {v: k for k, v in codes.items()}
 
 def check_for_translation_change(transcription):
+    """
+    Converts some human input like "translate Spanish" to the correct language code like "es".
+
+    Parameters
+    ----------
+    transcription : str
+        Something a human said
+
+    Returns
+    -------
+        The language code that corresponds to the language.
+    """
     try: # TODO: handle error properly (messes up when weird text encoding)
         lang_options_regex = "|".join([i for i in codes.values()])
         regex = f"[Tt]ranslate ({lang_options_regex})"

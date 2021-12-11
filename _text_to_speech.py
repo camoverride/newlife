@@ -19,6 +19,10 @@ class TextToSpeech:
         response : str
             Some text that you want to be spoken
 
+        language : str
+            The code for the language/dialect you want the response to be spoken in.
+            See `gtts_lang_codes.py` for a mapping of language code to language name.
+
         Returns
         -------
         None
