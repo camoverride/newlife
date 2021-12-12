@@ -1,3 +1,3 @@
 #!/bin/sh
 sleep 30
-nohup python /home/pi/newlife/chat.py
+python /home/pi/newlife/chat.py >> chat.log
