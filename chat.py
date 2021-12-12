@@ -76,6 +76,7 @@ class Persona:
 
                 # ASR
                 print("2) ASR .............")
+                time.sleep(0.1) # add latency so the script can be more elegantly killed
                 start = datetime.now()
                 transcription = None
                 if audio:
