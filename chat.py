@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#! /usr/bin/env python
 
 # For checkpointing model runtime on low-power devices (raspberry pi zero)
 from datetime import datetime
