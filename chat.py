@@ -1,3 +1,5 @@
+# TODO: print debug somewhere - modify print statements
+
 #! /usr/bin/env python
 
 # For checkpointing model runtime on low-power devices (raspberry pi zero)
@@ -99,6 +101,8 @@ class Persona:
 
 
                     # Change translation language
+                    # If the human says "translate X," the language will change to X.
+                    # e.g. "translate Indonesian"
                     lc = check_for_translation_change(transcription)
                     if lc:
                         self.language = lc
