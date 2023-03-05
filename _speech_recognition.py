@@ -22,7 +22,7 @@ class SpeechRecognizer:
         IMPORTANT: this method uses the speech_recognition library, and can probably be run
         offline. It simply records the intensity of the audio input and waits for it to
         tail off. Not sure how "modern" this approach is. See: https://github.com/Uberi/speech_recognition/blob/010382b80267f0f7794169fccc8e875ee7da7c19/speech_recognition/__init__.py#L632
-
+        This makes use of zero crossing rate: https://en.wikipedia.org/wiki/Zero-crossing_rate
 
         Parameters
         ----------
