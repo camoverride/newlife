@@ -67,6 +67,11 @@ Furthermore, each of these stages can be augmented by different machine learning
 
 
 ## TODO
+- refactor bot as a server, as it will sometimes need to send and receive messages from brain_bot
+- move all models to server on local network
+    - ASR model (multiple languages)
+    - TTS model (multiple languages)
+    - translation model (multiple languages)
 
 - add tests
 - add custom voice options
