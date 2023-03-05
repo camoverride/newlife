@@ -1,6 +1,8 @@
 import subprocess
 import wave
 
+# https://pypi.org/project/SpeechRecognition/
+# https://libraries.io/pypi/SpeechRecognition
 import speech_recognition as sr
 
 
@@ -17,6 +19,11 @@ class SpeechRecognizer:
         This method listens to incoming audio and determines which "chunk" should
         be considered a valid speech signal for downstream processing.
 
+        IMPORTANT: this method uses the speech_recognition library, and can probably be run
+        offline. It simply records the intensity of the audio input and waits for it to
+        tail off. Not sure how "modern" this approach is. See: https://github.com/Uberi/speech_recognition/blob/010382b80267f0f7794169fccc8e875ee7da7c19/speech_recognition/__init__.py#L632
+
+
         Parameters
         ----------
         source : TODO: what format is this?
@@ -28,7 +35,7 @@ class SpeechRecognizer:
         """
         try:
             try:
-                return self.recognizer.listen(source, timeout=10)
+                return self.recognizer.listen(source, timeout=10, config=dict(language_code="en-US"))
             except:
                 return False
         except sr.UnknownValueError: # TODO: self.
