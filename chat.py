@@ -84,56 +84,56 @@ class Persona:
                 if audio:
                     transcription = self._speech_to_text.speech_to_text(audio)
 
-                if transcription:
-                    # ASR INFO
-                    end = datetime.now()
-                    print(f"... {transcription}")
-                    print(f"total seconds: {(end - start).total_seconds()}")
+                # if transcription:
+                #     # ASR INFO
+                #     end = datetime.now()
+                #     print(f"... {transcription}")
+                #     print(f"total seconds: {(end - start).total_seconds()}")
 
 
-                    # Change mode
-                    if transcription == "mode translate":
-                        self.mode = "translate"
-                    elif transcription == "mode Echo":
-                        self.mode = "echo"
-                    elif transcription == "mode chat":
-                        self.mode = "chat"
+                #     # Change mode
+                #     if transcription == "mode translate":
+                #         self.mode = "translate"
+                #     elif transcription == "mode Echo":
+                #         self.mode = "echo"
+                #     elif transcription == "mode chat":
+                #         self.mode = "chat"
 
 
-                    # Change translation language
-                    # If the human says "translate X," the language will change to X.
-                    # e.g. "translate Indonesian"
-                    lc = check_for_translation_change(transcription)
-                    if lc:
-                        self.language = lc
+                #     # Change translation language
+                #     # If the human says "translate X," the language will change to X.
+                #     # e.g. "translate Indonesian"
+                #     lc = check_for_translation_change(transcription)
+                #     if lc:
+                #         self.language = lc
 
 
-                    print("3) Knowledge .......")
-                    start = datetime.now()
-                    if not transcription and self.mode == "translate":
-                        response = " "
-                    elif not transcription:
-                        response = self._generate_response.default_say_more()
+                #     print("3) Knowledge .......")
+                #     start = datetime.now()
+                #     if not transcription and self.mode == "translate":
+                #         response = " "
+                #     elif not transcription:
+                #         response = self._generate_response.default_say_more()
 
-                    elif self.mode == "echo":
-                        response = transcription
-                    elif self.mode == "translate":
-                        response = self._generate_response.translate(transcription, language=self.language)
-                    else:
-                        response = self._generate_response.generate_response(transcription)
-                    # Knowledge INFO
-                    end = datetime.now()
-                    print(f"... {response}")
-                    print(f"total seconds: {(end - start).total_seconds()}")
+                #     elif self.mode == "echo":
+                #         response = transcription
+                #     elif self.mode == "translate":
+                #         response = self._generate_response.translate(transcription, language=self.language)
+                #     else:
+                #         response = self._generate_response.generate_response(transcription)
+                #     # Knowledge INFO
+                #     end = datetime.now()
+                #     print(f"... {response}")
+                #     print(f"total seconds: {(end - start).total_seconds()}")
 
 
-                    # TTS
-                    print("4) TTS .............")
-                    start = datetime.now()
-                    self._text_to_speech.text_to_speech(response, language=self.language)
-                    # TTS INFO
-                    end = datetime.now()
-                    print(f"total seconds: {(end - start).total_seconds()}")
+                #     # TTS
+                #     print("4) TTS .............")
+                #     start = datetime.now()
+                #     self._text_to_speech.text_to_speech(response, language=self.language)
+                #     # TTS INFO
+                #     end = datetime.now()
+                #     print(f"total seconds: {(end - start).total_seconds()}")
 
                 else:
                     pass

@@ -10,30 +10,24 @@ WIP
 
 ## Pi Setup - software
 
-ssh into your pi, preferably with a proxy like [tailscale](https://tailscale.com/).
+- `git clone https://github.com/camoverride/newlife.git`
+- `cd newlife`
+- `python3 -m venv .venv`
+- `source .venv/bin/activate`
+- `apt-get install alsa-tools`
+- `pip install -r requirements.txt`
+- `sudo apt install python3-pyaudio`
+- `sudo apt-get install gstreamer-1.0`
 
 Suppress annoying "pop-up" noise:
 `sudo mv /usr/share/piwiz/srprompt.wav /usr/share/piwiz/srprompt.wav.bak`
 
-Clone repo:
-
-`git clone https://github.com/camoverride/newlife.git`
-
-Install python requirements:
-
-`cd newlife && pip install -r requirements.txt`
-
-Install system dependencies:
-
-`sudo apt-get install gstreamer-1.0`
-
-Add "cronjob" by adding the following line to `/etc/xdg/lxsession/LXDE-pi/autostart` so that the system turns on after rebooting ([source](https://raspberrypi.stackexchange.com/questions/127927/pygame-mixer-does-not-play-sound-when-started-in-cron)):
+<!-- Add "cronjob" by adding the following line to `/etc/xdg/lxsession/LXDE-pi/autostart` so that the system turns on after rebooting ([source](https://raspberrypi.stackexchange.com/questions/127927/pygame-mixer-does-not-play-sound-when-started-in-cron)):
 
 ```
 @/usr/bin /home/pi/newlife/start_chat.sh
-```
-
-If you want to start the python script manually while ssh'd into your Pi but don't want it to shut down when you log out, use `nohup` and check `nohup.out` for logs:
+``` -->
+Start:
 
 `nohup python chat.py &`
 
