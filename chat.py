@@ -71,6 +71,7 @@ class Persona:
         while True:
             # Begin the audio stream
             with sr.Microphone() as source:
+                print(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>")
                 pass
                 # print("--------------------")
 
