@@ -1,6 +1,9 @@
 from gtts import gTTS
-from playsound import playsound
+import pygame
 
+
+
+pygame.mixer.init()
 
 
 class TextToSpeech:
@@ -30,4 +33,9 @@ class TextToSpeech:
         """
         tts = gTTS(response, lang=language)
         tts.save(".tts.mp3")
-        playsound(".tts.mp3")
+
+        pygame.mixer.music.load(".tts.mp3")
+        pygame.mixer.music.play()
+        while pygame.mixer.music.get_busy() == True:
+            continue
+        
