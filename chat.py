@@ -71,18 +71,18 @@ class Persona:
         while True:
             # Begin the audio stream
             with sr.Microphone() as source:
-                print("--------------------")
+                # print("--------------------")
 
-                print("1) Listen ..........")
-                audio = self._speech_to_text.get_audio(source)
+                # print("1) Listen ..........")
+                # audio = self._speech_to_text.get_audio(source)
 
-                # ASR
-                print("2) ASR .............")
-                time.sleep(0.1) # add latency so the script can be more elegantly killed
-                start = datetime.now()
-                transcription = None
-                if audio:
-                    transcription = self._speech_to_text.speech_to_text(audio)
+                # # ASR
+                # print("2) ASR .............")
+                # time.sleep(0.1) # add latency so the script can be more elegantly killed
+                # start = datetime.now()
+                # transcription = None
+                # if audio:
+                #     transcription = self._speech_to_text.speech_to_text(audio)
 
                 # if transcription:
                 #     # ASR INFO
