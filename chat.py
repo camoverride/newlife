@@ -71,6 +71,7 @@ class Persona:
         while True:
             # Begin the audio stream
             with sr.Microphone() as source:
+                pass
                 # print("--------------------")
 
                 # print("1) Listen ..........")
@@ -135,8 +136,9 @@ class Persona:
                 #     end = datetime.now()
                 #     print(f"total seconds: {(end - start).total_seconds()}")
 
-                else:
-                    pass
+                # else:
+                #     pass
+            time.sleep(3)
 
 
 if __name__ == "__main__":
